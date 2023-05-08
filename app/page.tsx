@@ -1,8 +1,7 @@
 import path from "path";
 import { promises as fs } from "fs";
 
-import classNames from "classnames";
-
+import Header from "@/components/header";
 import Timeline from "@/components/timeline";
 
 type Event = {
@@ -29,7 +28,7 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-4 lg:p-24">
-      <h1 className="text-5xl font-bold text-gray-900 mb-8 lg:mb-16">Vercel Lore</h1>
+      <Header />
       <Timeline history={history} /> 
     </main>
   );

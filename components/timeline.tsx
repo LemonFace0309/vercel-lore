@@ -35,6 +35,7 @@ export default function Timeline({ history }: TimelineProps) {
       animate="visible"
       transition={{
         duration: 1.0,
+        delay: 2.0,
       }}
       className="relative w-full flex flex-col gap-12 before:top-0 before:bottom-0 before:bg-neutral-900 before:absolute before:w-1 lg:before:left-1/2 lg:before:-ml-0.5"
     >
