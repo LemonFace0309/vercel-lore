@@ -1,0 +1,79 @@
+[
+  {
+    "date": "",
+    "title": "Vercel hires the best intern ever",
+    "description": "An offer letter is extended to Charles Liu, famous for breaking the internet by posting a shirtless photo of himself on Twitter asking for an internship at Vercel.",
+    "link": "https://twitter.com/CharlesLiu9/status/1654199819903160345",
+    "img": "/history/charles-liu.png"
+  },
+  {
+    "date": "December 25, 2022",
+    "title": "Vercel acquires Splitbee",
+    "description": "Vercel acquires Splitbee, a company that makes it easy to track and analyze your website traffic.",
+    "link": "https://vercel.com/blog/vercel-acquires-splitbee",
+    "img": "/history/splitbee-logo.png"
+  },
+  {
+    "date": "October 25, 2022",
+    "title": "Vercel introduces Turbopack",
+    "description": "Vercel introduces Turbopack, a new way to bundle your code that makes it faster and easier to deploy. Turbopack is built on Rust and uses SWC to compile your code.",
+    "link": "https://vercel.com/blog/turbopack",
+    "img": "/history/turbopack-logo.png"
+  },
+  {
+    "date": "December 9, 2021",
+    "title": "Vercel acquires Turborepo",
+    "description": "Vercel acquires Turborepo, a company that makes it easy to build and deploy code from GitHub to the cloud.",
+    "link": "https://vercel.com/blog/vercel-acquires-turborepo",
+    "img": "/history/turborepo-logo.png"
+  },
+  {
+    "date": "November 23, 2021",
+    "title": "Vercel raises $150M in Series D funding",
+    "description": "Vercel raises $150M in Series D funding led by Tiger Global, with participation from existing investors Accel, CRV, Geodesic Capital, Greenoaks Capital, GV, and Next47.",
+    "link": "https://vercel.com/blog/vercel-funding-series-d-and-valuation",
+    "img": "/history/series-d.png"
+  },
+  {
+    "date": "June 23, 2021",
+    "title": "Vercel raises $102M in Series C funding",
+    "description": "Vercel raises $102M in Series C funding led by Bedrock Capital, with participation from Accel, CRV, Geodesic Capital, Greenoaks Capital, GV, and Next47.",
+    "link": "https://vercel.com/blog/series-c-102m-continue-building-the-next-web",
+    "img": "/history/series-c.png"
+  },
+  {
+    "date": "December 16, 2020",
+    "title": "Vercel raises $40M in Series B funding",
+    "description": "Vercel raises $40M in Series B funding led by GV, with participation from Greenoaks Capital and Bedrock Capital.",
+    "link": "https://vercel.com/blog/series-b-40m-to-build-the-next-web",
+    "img": "/history/series-b.png"
+  },
+  {
+    "date": "April 21, 2020",
+    "title": "Vercel raises $21M in Series A funding",
+    "description": "Zeit rebrands to Vercel and raises $21M in Series A funding led by Accel, with participation from CRV and Geodesic Capital.",
+    "link": "https://vercel.com/blog/zeit-is-now-vercel",
+    "img": "/history/vercel-logo.png"
+  },
+  {
+    "date": "October 25, 2016",
+    "title": "ZEIT launches Next.js",
+    "description": "Next.js is released as an open-source project on GitHub. It was originally developed based on six principles: out-of-the-box functionality requiring no setup, JavaScript everywhere, all functions are written in JavaScript, automatic code-splitting and server-rendering, configurable data-fetching, anticipating requests, and simplifying deployment",
+    "link": "https://nextjs.org/",
+    "img": "/history/nextjs-logo.png"
+  },
+  {
+    "date": "April, 2016",
+    "title": "ZEIT launches Now",
+    "description": "Now allows you to deploy any project to the cloud with just one command, now.",
+    "link": "https://www.npmjs.com/package/now",
+    "img": "/history/success-kid.png"
+  },
+  {
+    "date": "November, 2015",
+    "title": "Guillerimo Rauch, Tony Kovanen, and Naoyuki Kanezawa start ZEIT",
+    "description": "Zeit aims to make deployment and hosting of applications in the cloud simple, instant and global. Our mission is to empower the individual. At home or inside companies and teams. Go directly to production without barriers.",
+    "link": "https://rauchg.com/2017/2016-in-review",
+    "img": "/history/zeit-logo.png"
+  }
+]
