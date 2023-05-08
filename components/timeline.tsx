@@ -3,7 +3,7 @@
 import classNames from "classnames";
 import { motion } from "framer-motion";
 
-import Card from "./card";
+import HistoryCard from "./history-card";
 import Section from "./section";
 
 type Event = {
@@ -37,7 +37,7 @@ export default function Timeline({ history }: TimelineProps) {
         duration: 1.0,
         delay: 2.0,
       }}
-      className="relative w-full flex flex-col gap-12 before:top-0 before:bottom-0 before:bg-neutral-900 before:absolute before:w-1 lg:before:left-1/2 lg:before:-ml-0.5"
+      className="relative w-full flex flex-col gap-12 mt-8 lg:mt-16 before:top-0 before:bottom-0 before:bg-neutral-900 before:absolute before:w-1 lg:before:left-1/2 lg:before:-ml-0.5"
     >
       {history.map((event, i) => (
         <Section
@@ -49,7 +49,7 @@ export default function Timeline({ history }: TimelineProps) {
         >
           {/* Connecting Line */}
           <div className="w-full h-1 bg-neutral-900 absolute"></div>
-          <Card {...event} className="z-10 ml-12 lg:ml-0" />
+          <HistoryCard {...event} className="z-10 ml-12 lg:ml-0" />
           {/* Connecting Box */}
           <div
             className={classNames(

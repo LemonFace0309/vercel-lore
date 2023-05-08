@@ -1,5 +1,6 @@
 [
   {
+    "id": "1",
     "date": "",
     "title": "Vercel hires the best intern ever",
     "description": "An offer letter is extended to Charles Liu, famous for breaking the internet by posting a shirtless photo of himself on Twitter asking for an internship at Vercel.",
@@ -7,6 +8,7 @@
     "img": "/history/charles-liu.png"
   },
   {
+    "id": "2",
     "date": "December 25, 2022",
     "title": "Vercel acquires Splitbee",
     "description": "Vercel acquires Splitbee, a company that makes it easy to track and analyze your website traffic.",
@@ -14,6 +16,7 @@
     "img": "/history/splitbee-logo.png"
   },
   {
+    "id": "3",
     "date": "October 25, 2022",
     "title": "Vercel introduces Turbopack",
     "description": "Vercel introduces Turbopack, a new way to bundle your code that makes it faster and easier to deploy. Turbopack is built on Rust and uses SWC to compile your code.",
@@ -21,6 +24,7 @@
     "img": "/history/turbopack-logo.png"
   },
   {
+    "id": "4",
     "date": "December 9, 2021",
     "title": "Vercel acquires Turborepo",
     "description": "Vercel acquires Turborepo, a company that makes it easy to build and deploy code from GitHub to the cloud.",
@@ -28,6 +32,7 @@
     "img": "/history/turborepo-logo.png"
   },
   {
+    "id": "5",
     "date": "November 23, 2021",
     "title": "Vercel raises $150M in Series D funding",
     "description": "Vercel raises $150M in Series D funding led by Tiger Global, with participation from existing investors Accel, CRV, Geodesic Capital, Greenoaks Capital, GV, and Next47.",
@@ -35,6 +40,7 @@
     "img": "/history/series-d.png"
   },
   {
+    "id": "7",
     "date": "June 23, 2021",
     "title": "Vercel raises $102M in Series C funding",
     "description": "Vercel raises $102M in Series C funding led by Bedrock Capital, with participation from Accel, CRV, Geodesic Capital, Greenoaks Capital, GV, and Next47.",
@@ -42,6 +48,7 @@
     "img": "/history/series-c.png"
   },
   {
+    "id": "8",
     "date": "December 16, 2020",
     "title": "Vercel raises $40M in Series B funding",
     "description": "Vercel raises $40M in Series B funding led by GV, with participation from Greenoaks Capital and Bedrock Capital.",
@@ -49,6 +56,7 @@
     "img": "/history/series-b.png"
   },
   {
+    "id": "9",
     "date": "April 21, 2020",
     "title": "Vercel raises $21M in Series A funding",
     "description": "Zeit rebrands to Vercel and raises $21M in Series A funding led by Accel, with participation from CRV and Geodesic Capital.",
@@ -56,6 +64,7 @@
     "img": "/history/vercel-logo.jpg"
   },
   {
+    "id": "10",
     "date": "October 25, 2016",
     "title": "ZEIT launches Next.js",
     "description": "Next.js is released as an open-source project on GitHub. It was originally developed based on six principles: out-of-the-box functionality requiring no setup, JavaScript everywhere, all functions are written in JavaScript, automatic code-splitting and server-rendering, configurable data-fetching, anticipating requests, and simplifying deployment",
@@ -63,6 +72,7 @@
     "img": "/history/nextjs-logo.png"
   },
   {
+    "id": "11",
     "date": "April, 2016",
     "title": "ZEIT launches Now",
     "description": "Now allows you to deploy any project to the cloud with just one command, now.",
@@ -70,6 +80,7 @@
     "img": "/history/success-kid.png"
   },
   {
+    "id": "1",
     "date": "November, 2015",
     "title": "Guillerimo Rauch, Tony Kovanen, and Naoyuki Kanezawa start ZEIT",
     "description": "Zeit aims to make deployment and hosting of applications in the cloud simple, instant and global. Our mission is to empower the individual. At home or inside companies and teams. Go directly to production without barriers.",

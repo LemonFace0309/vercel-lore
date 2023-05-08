@@ -5,6 +5,7 @@ import Header from "@/components/header";
 import Timeline from "@/components/timeline";
 
 type Event = {
+  id: string;
   date: string;
   title: string;
   description: string;
@@ -27,7 +28,7 @@ export default async function Home() {
   const history: Event[] = await getHistory();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-4 lg:p-24">
+    <main className="flex h-1 min-h-screen flex-col items-center justify-between p-4 lg:p-24">
       <Header />
       <Timeline history={history} /> 
     </main>
