@@ -40,7 +40,7 @@ export default function Timeline({ history }: TimelineProps) {
           {/* Connecting Box */}
           <div
             className={classNames(
-              "absolute w-5 h-5 border-4 border-neutral-900 dark:border-neutral-100 z-10 bg-default dark:bg-defaultDark right-full -mr-[0.625rem]",
+              "absolute w-5 h-5 border-4 border-neutral-900 dark:border-neutral-100 z-10 bg-lightTheme dark:bg-darkTheme right-full -mr-[0.625rem]",
               i % 2 == 0 && "lg:left-full lg:-ml-[0.625rem]"
             )}
           />
