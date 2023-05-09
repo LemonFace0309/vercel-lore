@@ -1,12 +1,11 @@
-"use client";
-
 import classNames from "classnames";
-import { motion } from "framer-motion";
 
+import FadeInContainer from "./fade-in-container";
 import HistoryCard from "./history-card";
 import Section from "./section";
 
 type Event = {
+  id: string;
   date: string;
   title: string;
   description: string;
@@ -15,29 +14,16 @@ type Event = {
 };
 
 type TimelineProps = {
-  history: Event[]
-}
+  history: Event[];
+};
 
 export default function Timeline({ history }: TimelineProps) {
   return (
-    <motion.div
-      variants={{
-        initial: {
-          opacity: 0,
-          display: "none",
-        },
-        visible: {
-          opacity: 1,
-          display: "flex",
-        },
-      }}
-      initial="initial"
-      animate="visible"
-      transition={{
-        duration: 1.0,
-        delay: 2.0,
-      }}
-      className="relative w-full flex flex-col gap-12 mt-8 lg:mt-16 before:top-0 before:bottom-0 before:bg-neutral-900 before:absolute before:w-1 lg:before:left-1/2 lg:before:-ml-0.5"
+    <FadeInContainer
+      className={classNames(
+        "relative w-full flex flex-col gap-12 mt-8 lg:mt-16",
+        "before:top-0 before:bottom-0 before:bg-neutral-900 before:absolute before:w-1 lg:before:left-1/2 lg:before:-ml-0.5",
+      )}
     >
       {history.map((event, i) => (
         <Section
@@ -49,6 +35,7 @@ export default function Timeline({ history }: TimelineProps) {
         >
           {/* Connecting Line */}
           <div className="w-full h-1 bg-neutral-900 absolute"></div>
+          {/* @ts-expect-error Async Server Component */}
           <HistoryCard {...event} className="z-10 ml-12 lg:ml-0" />
           {/* Connecting Box */}
           <div
@@ -59,6 +46,6 @@ export default function Timeline({ history }: TimelineProps) {
           />
         </Section>
       ))}
-    </motion.div>
+    </FadeInContainer>
   );
 }

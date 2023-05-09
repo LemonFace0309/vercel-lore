@@ -1,9 +1,26 @@
+import kv from "@vercel/kv";
+import { cache } from "react";
 import Image from "next/image";
 import classNames from "classnames";
 
-import EmojiReaction from "./emoji-reaction";
+import EmojiReaction, { Emoji } from "./emoji-reaction";
+
+// const getReactions = cache(async (id: string) => {
+//   const reactions: Partial<Record<Emoji, number>> = await kv.hgetall(id) ?? {};
+//   return reactions;
+// })
+async function getReactions(id: string) {
+  const prefix = "https://vercel-lore.vercel.app";
+  const res = await fetch(`${prefix}/api/event/${id}`, { method: "GET", next: { tags: [id] } });
+
+  const data: Partial<Record<Emoji, number>> = await res.json();
+  console.log(data);
+
+  return data;
+}
 
 type CardProps = {
+  id: string;
   title: string;
   date: string;
   description: string;
@@ -12,7 +29,8 @@ type CardProps = {
   className?: string;
 };
 
-export default function HistoryCard({
+export default async function HistoryCard({
+  id,
   title,
   date,
   description,
@@ -20,6 +38,8 @@ export default function HistoryCard({
   img,
   className,
 }: CardProps) {
+  const reactions = await getReactions(id);
+
   const dateFormatted = (date ? new Date(date) : new Date())
     .toISOString()
     .split("T")[0];
@@ -47,7 +67,7 @@ export default function HistoryCard({
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
           {description}
         </p>
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
           <a
             href={link}
             target="_blank"
@@ -69,9 +89,16 @@ export default function HistoryCard({
             </svg>
           </a>
           <div className="flex justify-center items-center">
-            <EmojiReaction label="fire" quantity={2} />
-            <EmojiReaction label="heart" quantity={2} />
-            <EmojiReaction label="rocket" quantity={2} />
+            {Object.entries(reactions)
+              .sort((e1, e2) => (e1[0] > e2[0] ? 1 : -1))
+              .map(([label, quantity]) => (
+                <EmojiReaction
+                  key={`${id}-${label}`}
+                  eventId={id}
+                  label={label as Emoji}
+                  quantity={quantity}
+                />
+              ))}
           </div>
         </div>
       </div>

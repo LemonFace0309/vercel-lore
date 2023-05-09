@@ -28,9 +28,9 @@ export default async function Home() {
   const history: Event[] = await getHistory();
 
   return (
-    <main className="flex h-1 min-h-screen flex-col items-center justify-between p-4 lg:p-24">
+    <main className="min-h-screen max-w-screen-2xl mx-auto flex flex-col items-center p-4 md:p-24">
       <Header />
-      <Timeline history={history} /> 
+      <Timeline history={history} />
     </main>
   );
 }

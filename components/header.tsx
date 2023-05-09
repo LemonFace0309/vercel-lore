@@ -9,8 +9,8 @@ export default function Header() {
 
   useEffect(() => {
     async function beginAnimation() {
-      await animate(scope.current, { opacity: 1 }, { duration: 0.8, delay: 0.6, ease: "easeInOut" });
-      await animate(scope.current, { height: "initial" }, { duration: 0.4 });
+      await animate(scope.current, { opacity: 1, transform: "scale(1.1)" }, { duration: 0.8, delay: 0.6, ease: "easeInOut" });
+      await animate(scope.current, { flexGrow:0, transform: "scale(1)" }, { duration: 0.6, ease: "easeInOut" });
     }
 
     beginAnimation();
@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <div
       ref={scope}
-      className="flex flex-col items-center justify-center w-full opacity-0 h-full"
+      className="flex flex-col items-center justify-center w-full opacity-0 grow"
     >
       <h1 className="text-5xl font-bold text-gray-900">
         Vercel Lore
