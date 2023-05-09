@@ -26,21 +26,19 @@ export default function Header() {
   }, [setTheme, theme, playOnDark, playOnLight]);
 
   return (
-    <FadeInContainer className="absolute w-full top-0 items-center justify-end p-4 text-black dark:text-white">
-      <div className="hidden md:block">
-        <button
-          className="items-center justify-center w-12 h-12 rounded-md dark:bg-gray-600 bg-pink focus:outline-none focus:ring-2 ring-blue-700 d-flex"
-          onClick={toggleTheme}
-        >
-          {mounted ? (
-            theme === "light" ? (
-              <HiMoon className="inline w-6 h-6 ml-1" />
-            ) : (
-              <HiSun className="inline w-6 h-6" />
-            )
-          ) : null}
-        </button>
-      </div>
+    <FadeInContainer className="absolute w-full top-0 items-center justify-end py-6 px-4 sm:px-24 text-black dark:text-white">
+      <button
+        className="items-center justify-center w-12 h-12 rounded-md dark:bg-gray-600 bg-gray-400 focus:outline-none focus:ring-2 ring-blue-700 d-flex"
+        onClick={toggleTheme}
+      >
+        {mounted ? (
+          theme === "light" ? (
+            <HiMoon className="inline w-6 h-6 ml-1" />
+          ) : (
+            <HiSun className="inline w-6 h-6" />
+          )
+        ) : null}
+      </button>
     </FadeInContainer>
   );
 }
