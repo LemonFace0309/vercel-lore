@@ -5,19 +5,10 @@ import classNames from "classnames";
 
 import EmojiReaction, { Emoji } from "./emoji-reaction";
 
-// const getReactions = cache(async (id: string) => {
-//   const reactions: Partial<Record<Emoji, number>> = await kv.hgetall(id) ?? {};
-//   return reactions;
-// })
-async function getReactions(id: string) {
-  const prefix = "https://theloreof.vercel.app";
-  const res = await fetch(`${prefix}/api/event/${id}`, { method: "GET", next: { tags: [id] } });
-
-  const data: Partial<Record<Emoji, number>> = await res.json();
-  console.log(data);
-
-  return data;
-}
+const getReactions = cache(async (id: string) => {
+  const reactions: Partial<Record<Emoji, number>> = await kv.hgetall(id) ?? {};
+  return reactions;
+})
 
 type CardProps = {
   id: string;

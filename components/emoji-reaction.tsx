@@ -1,9 +1,10 @@
 "use client";
 
-import { experimental_useOptimistic as useOptimistic, useState } from "react";
+import { useEffect, experimental_useOptimistic as useOptimistic, useState } from "react";
 import classNames from "classnames";
 
-import { react, unreact } from "../app/actions";
+import { react, unreact } from "@/app/actions";
+import useLocalStorage from "@/hooks/useLocalStorage";
 
 export type Emoji = "fire" | "heart" | "rocket";
 
@@ -26,24 +27,32 @@ export default function EmojiReaction({
   quantity,
   selected = false,
 }: EmojiReactionProps) {
-  const [isSelected, setIsSelected] = useState(selected);
+  const [isSelected, setIsSelected] = useLocalStorage<boolean>(`${eventId}-${label}`, selected);
+  const [firstRender, setFirstRender] = useState(true);
   const [optimisticQuantity, updateOptimisticQuantity] = useOptimistic(
     quantity,
-    (state, type: "inc" | "decr") => (type === "inc" ? state + 1 : state - 1)
+    (state, newQuanatity: number) => newQuanatity
   );
+
+  useEffect(() => {
+    setFirstRender(false);
+  }, []);
 
   return (
     <button
-      className={classNames("flex items-center justify-center mr-2 border-[1px] rounded-full px-2 border-blue-600 cursor-pointer hover:bg-blue-600", isSelected && "bg-blue-600")}
+      className={classNames(
+        "flex items-center justify-center mr-2 border-[1px] rounded-full px-2 border-blue-600 cursor-pointer hover:bg-blue-600",
+        isSelected && !firstRender && "bg-blue-600"
+      )}
       onClick={async () => {
+        setIsSelected((prev) => !prev);
         if (isSelected) {
-          updateOptimisticQuantity("decr");
+          updateOptimisticQuantity(optimisticQuantity - 1);
           await unreact(eventId, label);
         } else {
-          updateOptimisticQuantity("inc");
+          updateOptimisticQuantity(optimisticQuantity + 1);
           await react(eventId, label);
         }
-        setIsSelected((prev) => !prev);
       }}
     >
       <div className="mr-1">{emojiMap[label]}</div>
