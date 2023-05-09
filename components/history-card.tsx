@@ -10,7 +10,7 @@ import EmojiReaction, { Emoji } from "./emoji-reaction";
 //   return reactions;
 // })
 async function getReactions(id: string) {
-  const prefix = "https://vercel-lore.vercel.app";
+  const prefix = "https://theloreof.vercel.app";
   const res = await fetch(`${prefix}/api/event/${id}`, { method: "GET", next: { tags: [id] } });
 
   const data: Partial<Record<Emoji, number>> = await res.json();
