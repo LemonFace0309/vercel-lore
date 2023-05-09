@@ -41,7 +41,7 @@ export default function EmojiReaction({
   return (
     <button
       className={classNames(
-        "flex items-center justify-center mr-2 border-[1px] rounded-full px-2 border-blue-600 cursor-pointer hover:bg-blue-600",
+        "flex items-center justify-center mr-2 border-[1px] rounded-full px-2 border-blue-600 cursor-pointer hover:bg-blue-700",
         isSelected && !firstRender && "bg-blue-600"
       )}
       onClick={async () => {
