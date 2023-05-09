@@ -21,7 +21,7 @@ export default function Header() {
       ref={scope}
       className="flex flex-col items-center justify-center w-full opacity-0 grow"
     >
-      <h1 className="text-5xl font-bold text-gray-900">
+      <h1 className="text-5xl font-bold text-gray-900 dark:text-gray-100">
         Vercel Lore
       </h1>
     </div>

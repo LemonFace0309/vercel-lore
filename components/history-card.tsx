@@ -6,9 +6,10 @@ import classNames from "classnames";
 import EmojiReaction, { Emoji } from "./emoji-reaction";
 
 const getReactions = cache(async (id: string) => {
-  const reactions: Partial<Record<Emoji, number>> = await kv.hgetall(id) ?? {};
+  const reactions: Partial<Record<Emoji, number>> =
+    (await kv.hgetall(id)) ?? {};
   return reactions;
-})
+});
 
 type CardProps = {
   id: string;
@@ -34,6 +35,7 @@ export default async function HistoryCard({
   const dateFormatted = (date ? new Date(date) : new Date())
     .toISOString()
     .split("T")[0];
+
   return (
     <div
       className={classNames(
@@ -58,7 +60,7 @@ export default async function HistoryCard({
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
           {description}
         </p>
-        <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex items-center justify-between">
           <a
             href={link}
             target="_blank"

@@ -22,7 +22,7 @@ export default function Timeline({ history }: TimelineProps) {
     <FadeInContainer
       className={classNames(
         "relative w-full flex flex-col gap-12 mt-8 lg:mt-16",
-        "before:top-0 before:bottom-0 before:bg-neutral-900 before:absolute before:w-1 lg:before:left-1/2 lg:before:-ml-0.5",
+        "before:top-0 before:bottom-0 before:bg-neutral-900 dark:before:bg-neutral-100 before:absolute before:w-1 lg:before:left-1/2 lg:before:-ml-0.5",
       )}
     >
       {history.map((event, i) => (
@@ -34,13 +34,13 @@ export default function Timeline({ history }: TimelineProps) {
           )}
         >
           {/* Connecting Line */}
-          <div className="w-full h-1 bg-neutral-900 absolute"></div>
+          <div className="w-full h-1 bg-neutral-900 dark:bg-neutral-100 absolute"></div>
           {/* @ts-expect-error Async Server Component */}
           <HistoryCard {...event} className="z-10 ml-12 lg:ml-0" />
           {/* Connecting Box */}
           <div
             className={classNames(
-              "absolute w-5 h-5 border-4 border-neutral-900 z-10 bg-default right-full -mr-[0.625rem]",
+              "absolute w-5 h-5 border-4 border-neutral-900 dark:border-neutral-100 z-10 bg-default dark:bg-defaultDark right-full -mr-[0.625rem]",
               i % 2 == 0 && "lg:left-full lg:-ml-[0.625rem]"
             )}
           />

@@ -51,12 +51,12 @@ export default function EmojiReaction({
           await unreact(eventId, label);
         } else {
           updateOptimisticQuantity(optimisticQuantity + 1);
-          await react(eventId, label);
+          await react(eventId, label);k
         }
       }}
     >
       <div className="mr-1">{emojiMap[label]}</div>
-      <div className="text-sm font-bold text-white">{optimisticQuantity}</div>
+      <div className={classNames("text-sm font-bold dark:text-white", isSelected && !firstRender ? "text-white" : "text-black")}>{optimisticQuantity}</div>
     </button>
   );
 }
