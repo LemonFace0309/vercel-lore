@@ -6,9 +6,10 @@ import classNames from "classnames";
 import EmojiReaction, { Emoji } from "./emoji-reaction";
 
 const getReactions = cache(async (id: string) => {
-  const reactions: Partial<Record<Emoji, number>> = await kv.hgetall(id) ?? {};
+  const reactions: Partial<Record<Emoji, number>> =
+    (await kv.hgetall(id)) ?? {};
   return reactions;
-})
+});
 
 type CardProps = {
   id: string;
@@ -81,6 +82,9 @@ export default async function HistoryCard({
             </svg>
           </a>
           <div className="flex justify-center items-center">
+            {/* <EmojiReaction eventId={id} label={"fire"} quantity={1} />
+            <EmojiReaction eventId={id} label={"heart"} quantity={1} />
+            <EmojiReaction eventId={id} label={"rocket"} quantity={1} /> */}
             {Object.entries(reactions)
               .sort((e1, e2) => (e1[0] > e2[0] ? 1 : -1))
               .map(([label, quantity]) => (
